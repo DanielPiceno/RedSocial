@@ -2,7 +2,7 @@ import {createGlobalStyle} from 'styled-components'
 
 export default createGlobalStyle`
 :root{
-  --schoolColor: #1da1f2;
+  --schoolColor: #6014AD;
   --schoolHover: #1a91da;
   --Hover: rgba(24, 161, 242, .1);
 }
@@ -24,10 +24,9 @@ code {
 }
 .App{
   display: flex;
-  height: 100vh;
-  max-width: 1250px;
+  height: 99.5vh;
+  max-width: 100%;
   margin: 0 auto;
-  border: 1px solid red;
 }
 `;
 
