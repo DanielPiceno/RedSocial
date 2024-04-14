@@ -7,23 +7,30 @@ import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import PublishIcon from '@mui/icons-material/Publish';
 
 
-export const Posts = () => {
+export const Posts = ({
+            name,
+            username,
+            text,
+            avatar,
+            imagePost
+}
+) => {
   return (
     <Post>
     <div className="post_avatar">
-      <Avatar src="https://randomuser.me/api/portraits/women/45.jpg" />
+      <Avatar src={avatar}/>
     </div>
     <PostBody>
       <div>
         <div>
-          <h3>Campanas de Belem <span>
+          <h3>{name}<span>
             <VerifiedUserIcon className="post_icon"/>
-            @campanasa21</span></h3>
+            @{username}</span></h3>
           <PostDescription>
-            <p>lorem alex</p>
+            <p>{text}</p>
           </PostDescription>  
         </div>
-        <Images src="http://blogscvc.cervantes.es/martes-neologico/wp-content/uploads/sites/2/2021/08/gif_500.gif" />
+        <Images src={imagePost} />
         <PostFooter>
           <ChatBubbleOutlinedIcon fontSize="small" />
           <RepeatIcon fontSize="small" />

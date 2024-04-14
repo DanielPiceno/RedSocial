@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Widget = styled.div`
-//flex: 0.3;
+flex: 0.3;
 overflow-y: scroll ;
 box-sizing: border-box;
 padding: 0 30px 10px 20px;
@@ -11,11 +11,16 @@ padding: 0 30px 10px 20px;
 -ms-overflow-style: none;
 scrollbar-width: none;
 
+@media only screen and (max-width: 1280px){
+    flex: 0.3; 
+}
+@media only screen and (max-width: 1004px){
+    display: none;
+}
 `
 
 export const Header = styled.div`
 background-color: white;
-height: 50px;
 position: sticky;
 padding-top: 10px;
 top: 0;
@@ -39,6 +44,11 @@ color: #5b7030;
 `
 export const DivContent = styled.div`
 
+display: flex;
+align-items: center;
+background-color: #eee;
+padding: 10px;
+border-radius: 20px;
 `
 
   

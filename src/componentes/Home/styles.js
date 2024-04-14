@@ -1,10 +1,10 @@
-import styled from 'styled-components';
+import styled, {css} from 'styled-components';
 
 export const Container = styled.div`
-//flex: 0.5;
+flex: 0.75;
 border-right: 1px solid #ddd;
 overflow-y: scroll;
-width: 800px;
+width: 1280px;
 box-sizing: border-box;
 
 &::-webkit-scrollbar{
@@ -12,7 +12,15 @@ box-sizing: border-box;
     }
     -ms-overflow-style: none;
     scrollbar-width:none;
-
+    @media only screen and (max-width: 1280px){
+    flex: 0.55; 
+}
+@media only screen and (max-width: 1004px){
+    flex: 0.95; 
+}
+@media only screen and (max-width: 500px){
+    flex: 1; 
+}
 `
 
 export const Header = styled.header``
@@ -101,9 +109,20 @@ export const Form = styled.form`
 display: flex;
 flex-direction: column;
 `
-
+export const File = styled.input`
+max-width: 35px;
+position: absolute;
+z-index: 10;
+opacity: 0;
+padding-top: 10px;
+margin-left: 20px;
+padding-left: 20px;
+${props => props.primary && css`
+margin-left: 55px;
+`};
+`
 /*POSTS*/
-
+ 
 export const Post = styled.div`
 padding: 10px 15px;
 border-top: 1px solid #ddd;
@@ -176,3 +195,4 @@ transition: all 100ms ease-in;
     cursor: pointer;
 }
 `
+
