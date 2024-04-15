@@ -1,8 +1,9 @@
 import React from 'react';
-import { LoginContainer, Button, WelcomeText } from './styles';
+import { LoginContainer, Button, WelcomeText, Img, ImageContainer } from './styles';
 import { getAuth, signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
 import { collection, getDocs, addDoc, query, where } from 'firebase/firestore'; // Importa los métodos necesarios
 import { db } from '../../firebase';
+import logo from '../../images/logo1.jpeg';
 
 const provider = new GoogleAuthProvider();
 
@@ -39,7 +40,10 @@ export const Login = () => {
     return (
         <LoginContainer>
             <WelcomeText>BIENVENIDO A UNICHAT</WelcomeText>
-            <Button onClick={loginGoogle} center>Iniciar sesión con Google</Button>
+            <ImageContainer>
+            <Img src={logo} alt='LogoUnichat' />
+            </ImageContainer>
+          <Button onClick={loginGoogle} center>Iniciar sesión con Google</Button>
         </LoginContainer>
     );
 };

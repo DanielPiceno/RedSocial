@@ -6,7 +6,10 @@ export const LoginContainer = styled.div`
   height: 500px;
   width: 100%;
   background-color: white;
+  
+  
 `;
+
 
 export const Button = styled.button`
  background-color: #6014AD;
@@ -26,6 +29,17 @@ export const Button = styled.button`
   &:hover {
     background-color: rgba(96, 20, 173, 0.5);
   }
+  
+@media only screen and (max-width: 1004px){
+  width: 300px;
+    height: 36px; 
+    
+}
+@media only screen and (max-width: 500px){
+  width: 250px;
+    height: 30px; 
+    
+}
 `;
 export const WelcomeText = styled.p`
     font-size: 60px;
@@ -33,5 +47,31 @@ export const WelcomeText = styled.p`
     text-align: center;
     margin-bottom: 20px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    /* Otros estilos que desees aplicar al texto de bienvenida */
+    
+@media only screen and (max-width: 1004px){
+  font-size: 40px;
+    
+}
+@media only screen and (max-width: 500px){
+  font-size: 30px;
+}
+`;
+
+export const Img = styled.img`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  @media only screen and (max-width: 1004px){
+
+  }
+  @media only screen and (max-width: 500px){
+  
+  }
+`;
+export const ImageContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px; /* Ajusta la altura según sea necesario */
 `;
