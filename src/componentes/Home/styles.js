@@ -13,7 +13,7 @@ box-sizing: border-box;
     -ms-overflow-style: none;
     scrollbar-width:none;
     @media only screen and (max-width: 1280px){
-    flex: 0.55; 
+    flex: 0.65; 
 }
 @media only screen and (max-width: 1004px){
     flex: 0.95; 
@@ -35,11 +35,26 @@ padding: 15px 15px;
 export const Div = styled.div`
 display: flex;
 width: 100%;
+align-items: center;
+
 >.columns{
     display: flex;
     flex-direction: column;
     width: 100%;
     padding-right: 16px;
+    font-size: 26px;
+    
+    >span{
+    font-size: 26px;
+    margin-left: 10px;
+
+    @media only screen and (max-width: 500px){
+    font-size: 20px;
+}
+@media only screen and (max-width: 320px){
+    font-size: 16px;
+}
+    }
     >input{
         margin-left: 10px;
         margin-top: 10px;
@@ -49,6 +64,9 @@ width: 100%;
         font-size: 16px;
         line-height: 25px;
         color: #0f1419;
+@media only screen and (max-width: 500px){
+    font-size: 14px;
+}
     }
 }
 >input{
@@ -61,21 +79,33 @@ width: 100%;
     font-size: 16px;
     line-height: 25px;
     color: #0f1419;
+    @media only screen and (max-width: 500px){
+    font-size: 14px;
+}
 
 }
 >Button{
-    background-color: var(--schoolColor) !important;
-    border: none !important;
-    font-weight: 900 !important;
-    color:white !important;
-    width: 80px !important;
-    height: 40px !important; 
-    margin-top: 20px !important;
-    border-radius: 30px !important;
-    text-transform: inherit !important;
-;
-
+    background-color: var(--schoolColor);
+    border: none;
+    font-weight: 400;
+    color:white;
+    width: 80px ;
+    height: 35px ; 
+    margin-top: 20px ;
+    border-radius: 30px ;
+    text-transform: inherit ;
+    transition: width 0.3s ease;
+    @media only screen and (max-width: 500px){
+    font-size: 14px;
+    width: 60px ;
+    height: 30px ; 
 }
+}
+>Button:hover{
+width: 90px;
+background-color:#8B49B5;
+}
+
 `
 export const DivIcon = styled.div`
     padding: 15px 15px;
@@ -104,6 +134,10 @@ border-radius: 50%;
 width: 50px;
 height: 50px;
 object-fit: fill;
+@media only screen and (max-width: 320px){
+    width: 42px;
+    height: 42px;
+}
 `
 export const Form = styled.form`
 display: flex;
@@ -131,6 +165,12 @@ display: flex;
 align-items: flex-start;
 .post_avatar{
     margin-top: 5px;
+}
+@media only screen and (max-width: 375px){
+    font-size: 14px;
+}
+@media only screen and (max-width: 375px){
+    font-size: 12px;
 }
 `
 
@@ -164,13 +204,15 @@ margin-bottom: 10px;
     color: #0f1419;
     font-size: 16px;
     line-height: 16.6875px;
+    @media only screen and (max-width: 375px){
+    font-size: 14px;
+}
 }
 `
 export const Images = styled.img`
 border-radius: 20px;
 min-width: 100%;
 width: 100%;
-min-height: 300px;
 `
 export const PostFooter = styled.div`
 display: flex;
@@ -195,4 +237,3 @@ transition: all 100ms ease-in;
     cursor: pointer;
 }
 `
-

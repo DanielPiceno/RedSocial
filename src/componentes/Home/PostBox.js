@@ -96,11 +96,11 @@ export const PostBox = () => {
         )
     }
 
-    const handlePost = e =>{
+    const handlePost = e => {
         const file = e.target.files[0];
         const storageRef = ref(storage, `/post/${file.name}`);
         const uploadTask = uploadBytesResumable(storageRef, file);
-
+    
         uploadTask.on(
             "state_changed",
             snapshot => {
@@ -109,16 +109,16 @@ export const PostBox = () => {
             },
             error => {
                 console.log("Error durante la carga:", error);
-            }, () =>{
+            }, () => {
                 console.log("Carga completada con éxito");
                 getDownloadURL(storageRef).then(url => {
                     console.log("URL de descarga:", url);
                     setPubImg(url);
+                    alert("Imagen cargada correctamente"); // Mostrar mensaje de alerta
                 }).catch(error => {
                     console.log("Error al obtener la URL de descarga:", error);
                 });
             }
-            
         )
     }
 
@@ -129,13 +129,14 @@ export const PostBox = () => {
                     {images ? <Avatar src={images} alt="" /> : <Avatar src={User} alt="" />}
                     <File type="file" onChange={handleSubir} disabled />
                     <div className="columns">
+                    <span>{usuario}</span> 
                         <input
                             type="text"
                             placeholder="En que estas pensando?"
                             value={postMsg}
                             onChange={(e) => setPostMsg(e.target.value)}
                         />
-                        <span>{usuario}</span> {/* Cambio a span para mostrar el nombre de usuario */}
+                        
                     </div>
                 </Div>
                 <Div>
@@ -150,9 +151,10 @@ export const PostBox = () => {
                         placeholder="Opcional Url de la imagen/gif"
                         value={pubImg}
                         onChange={(e) => setPubImg(e.target.value)}
+                        readOnly
                     />
                     <Button onClick={sendPost} type="submit">
-                        Post
+                        POST
                     </Button>
                 </Div>
             </Form>

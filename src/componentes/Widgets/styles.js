@@ -1,3 +1,4 @@
+import { Button } from "@mui/material";
 import styled from "styled-components";
 
 export const Widget = styled.div`
@@ -49,6 +50,13 @@ align-items: center;
 background-color: #eee;
 padding: 10px;
 border-radius: 20px;
+`
+export const ButtonXd = styled.button`
+    all: unset;
+    background-color: transparent;
+    width: 100%;
+    color: inherit;
+    cursor: pointer;
 `
 
   
